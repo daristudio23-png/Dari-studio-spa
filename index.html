@@ -5,6 +5,7 @@
   <title>Dari Studio Spa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Dari Studio Spa – Manicure, Pedicure, Hair Spa y Estética. Reserva tu hora hoy."/>
+  
   <style>
     body {
       margin: 0;
@@ -42,6 +43,7 @@
       font-weight: bold;
       border-radius: 30px;
       transition: 0.3s;
+      display: inline-block;
     }
 
     .btn:hover {
@@ -52,6 +54,17 @@
       padding: 60px 20px;
       max-width: 1100px;
       margin: auto;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      color: #555;
+      margin-bottom: 30px;
     }
 
     .services {
@@ -65,7 +78,75 @@
       border: 1px solid #eee;
       padding: 25px;
       border-radius: 12px;
-      text-align: center;
     }
 
-    .card h
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    footer {
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Dari Studio Spa</h1>
+    <p class="subtitle">
+      Manicure · Pedicure · Hair Spa · Estética<br>
+      Un espacio para verte y sentirte bien
+    </p>
+
+    <a class="btn" href="https://wa.me/569XXXXXXXX" target="_blank">
+      Reservar por WhatsApp
+    </a>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="section">
+    <h2>Nuestros Servicios</h2>
+    <p>Cuidado, belleza y bienestar en un solo lugar</p>
+
+    <div class="services">
+      <div class="card">
+        <h3>Manicure</h3>
+        <p>Cuidado profesional para manos perfectas.</p>
+      </div>
+
+      <div class="card">
+        <h3>Pedicure</h3>
+        <p>Relajación y estética para tus pies.</p>
+      </div>
+
+      <div class="card">
+        <h3>Hair Spa</h3>
+        <p>Tratamientos capilares revitalizantes.</p>
+      </div>
+
+      <div class="card">
+        <h3>Estética</h3>
+        <p>Servicios faciales y corporales personalizados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Dari Studio Spa · Las Condes · Santiago de Chile
+  </footer>
+
+</body>
+</html>
