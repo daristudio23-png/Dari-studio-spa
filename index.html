@@ -1,82 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dari Studio Spa | Manicure, Pedicure & Hair Spa</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+        content="Dari Studio Spa en Las Condes. Manicure, Pedicure, Hair Spa, Keratina y Estética." />
+
+  <meta name="robots" content="index, follow" />
+
+  <!-- MONTSERRAT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
 <body class="dark-theme">
 
-<!-- HERO -->
-<section class="hero-dark">
-  <div class="hero-overlay"></div>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Dari Studio Spa</h1>
+    <p class="subtitle">
+      Manicure · Pedicure · Hair Spa · Estética  
+      <br>Las Condes, Santiago
+    </p>
 
-  <img src="img/logo-dari.png" alt="Dari Studio Spa" class="hero-logo">
+    <div class="buttons">
+      <a href="https://agendapro.com/site/cl/daristudiospa/428012"
+         target="_blank"
+         class="btn btn-gold">
+        Reservar Online
+      </a>
 
-  <h1>Dari Studio Spa</h1>
-  <p class="subtitle">
-    Manicure · Pedicure · Hair Spa · Estética<br>
-    Las Condes, Santiago
-  </p>
-
-  <div class="hero-actions">
-    <a href="https://agendapro.com/site/cl/daristudiospa/428012"
-       class="btn-gold">
-      Reservar Online
-    </a>
-
-    <a href="https://wa.me/56926302656"
-       class="btn-whatsapp-icon"
-       aria-label="WhatsApp">
-      <img src="img/whatsapp.svg" alt="WhatsApp">
-    </a>
-  </div>
-</section>
-
-<!-- SERVICIOS -->
-<section class="section dark">
-  <h2>Nuestros Servicios</h2>
-
-  <div class="services">
-    <div class="service-card">
-      <h3>Manicure & Pedicure</h3>
-      <p>Cuidado profesional para manos y pies.</p>
-      <a href="https://wa.me/56926302656" class="mini-whatsapp">
-        <img src="img/whatsapp.svg" alt="WhatsApp">
+      <a href="https://wa.me/56926302656"
+         target="_blank"
+         class="btn-icon whatsapp-link"
+         aria-label="WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
       </a>
     </div>
+  </section>
 
-    <div class="service-card">
-      <h3>Hair Spa</h3>
-      <p>Tratamientos capilares de bienestar profundo.</p>
-      <a href="https://wa.me/56926302656" class="mini-whatsapp">
-        <img src="img/whatsapp.svg" alt="WhatsApp">
-      </a>
-    </div>
-  </div>
-</section>
+  <!-- SERVICIOS -->
+  <section class="section">
+    <h2>Nuestros Servicios</h2>
 
-<!-- KERATINA -->
-<section class="section dark">
-  <h2>Tratamiento de Keratina</h2>
-
-  <div class="productos-keratina">
-
-    <div class="producto-card dark-card">
-      <img src="img/keratina-corto.jpeg" alt="Keratina cabello corto">
-
-      <h3>Keratina Cabello Corto</h3>
-
-      <div class="product-actions">
-        <a href="https://wa.me/56926302656"
-           class="icon-whatsapp">
-          <img src="img/whatsapp.svg">
-        </a>
-
-        <a href="https://link.mercadopago.cl/keratina-corto"
-           class="btn-outline-gold">
-          Comprar ahora · 10% dcto
-        </a>
+    <div class="services">
+      <div class="card">
+        <h3>Manicure & Pedicure</h3>
+        <p>Cuidado profesional para manos y pies.</p>
       </div>
 
-      <p class="terms">
-        * Si tu largo no coincide con la referencia,
-        consulta por WhatsApp antes de comprar.
-      </p>
+      <div class="card">
+        <h3>Hair Spa</h3>
+        <p>Tratamientos capilares de bienestar profundo.</p>
+      </div>
+
+      <div class="card">
+        <h3>Ondas al Agua</h3>
+        <p>Look elegante y duradero.</p>
+      </div>
+
+      <div class="card">
+        <h3>Maquillaje Profesional</h3>
+        <p>Eventos y ocasiones especiales.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KERATINA -->
+  <section class="section keratina-section">
+    <h2>Tratamiento de Keratina</h2>
+
+    <div class="productos-keratina">
+
+      <!-- CORTO -->
+      <div class="producto-card">
+        <img src="img/keratina-corto.jpeg" alt="Keratina cabello corto">
+        <h3>Keratina Cabello Corto</h3>
+
+        <div class="actions">
+          <a href="https://wa.me/56926302656"
+             class="btn-icon small whatsapp-link">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+          </a>
+
+          <a href="https://link.mercadopago.cl/keratina-corto"
+             target="_blank"
+             class="btn btn-gold-outline pagar-link">
+            Comprar ahora · 10% dcto
+          </a>
+        </div>
+      </div>
+
+      <!-- MEDIO -->
+      <div class="producto-card">
+        <img src="img/keratina-medio.jpeg" alt="Keratina cabello medio">
+        <h3>Keratina Cabello Medio</h3>
+
+        <div class="actions">
+          <a href="https://wa.me/56926302656"
+             class="btn-icon small whatsapp-link">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+          </a>
+
+          <a href="https://link.mercadopago.cl/keratina-medio"
+             target="_blank"
+             class="btn btn-gold-outline pagar-link">
+            Comprar ahora · 10% dcto
+          </a>
+        </div>
+      </div>
+
+      <!-- LARGO -->
+      <div class="producto-card">
+        <img src="img/keratina-largo.jpeg" alt="Keratina cabello largo">
+        <h3>Keratina Cabello Largo</h3>
+
+        <div class="actions">
+          <a href="https://wa.me/56926302656"
+             class="btn-icon small whatsapp-link">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+          </a>
+
+          <a href="https://link.mercadopago.cl/keratina-largo"
+             target="_blank"
+             class="btn btn-gold-outline pagar-link">
+            Comprar ahora · 10% dcto
+          </a>
+        </div>
+      </div>
+
     </div>
 
-  </div>
-</section>
+    <p class="terms">
+      * Si el largo de tu cabello no coincide con la referencia, recomendamos consultar por WhatsApp antes de comprar.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Dari Studio Spa · Todos los derechos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
