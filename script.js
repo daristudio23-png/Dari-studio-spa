@@ -1,18 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Animación de entrada (reveal) para secciones y tarjetas
   const items = document.querySelectorAll(".reveal");
 
-  const io = new IntersectionObserver(
+  const observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("in-view");
-          io.unobserve(e.target);
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.12 }
+    { threshold: 0.15 }
   );
 
-  items.forEach((el) => io.observe(el));
+  items.forEach((el) => observer.observe(el));
 });
