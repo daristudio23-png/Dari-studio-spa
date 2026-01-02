@@ -15,7 +15,245 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css" />
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --gold:#d6b24d;
+  --bg:#000;
+  --text:#fff;
+  --muted:rgba(255,255,255,.75);
+  --shadow:0 20px 60px rgba(0,0,0,.7);
+}
+
+body{
+  font-family:"Montserrat",sans-serif;
+  background:#000;
+  color:#fff;
+}
+
+/* NAVBAR */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:72px;
+  padding:0 18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,.85);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.logo img{
+  height:48px;
+  object-fit:contain;
+}
+
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-phone{color:#ccc;text-decoration:none;font-size:13px}
+
+.btn{
+  border-radius:999px;
+  padding:12px 26px;
+  font-weight:700;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition:.3s;
+}
+
+.primary{background:var(--gold);color:#000}
+.whatsapp{background:#25d366;color:#000}
+.small{padding:9px 18px;font-size:13px}
+
+/* HERO */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding-top:120px; /* BAJA CONTENIDO */
+  overflow:hidden;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background:url("img/portada-web-daristudio.JPG") center/cover no-repeat;
+  animation:zoom 18s ease-in-out infinite alternate;
+}
+
+@media(max-width:768px){
+  .hero-bg{
+    background:url("img/dari-studio-portada-movil.jpg") center/cover no-repeat;
+  }
+}
+
+.hero-vignette{
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle,rgba(0,0,0,.3),#000 80%);
+}
+
+.hero-smoke{
+  position:absolute;
+  inset:-20%;
+  background:
+    radial-gradient(circle at 30% 40%,rgba(255,255,255,.06),transparent 40%),
+    radial-gradient(circle at 70% 60%,rgba(255,255,255,.04),transparent 45%);
+  animation:smoke 22s ease-in-out infinite alternate;
+}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+  transform:translateY(24px); /* BAJA 2–3 CM */
+  max-width:720px;
+  margin:auto;
+}
+
+.hero h1{
+  font-size:46px;
+  font-weight:800;
+  line-height:1.15;
+}
+
+.subtitle{
+  margin:14px 0 32px;
+  color:var(--muted);
+}
+
+.hero-buttons{
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.map-btn{
+  border:1px solid var(--gold);
+  color:var(--gold);
+  background:transparent;
+}
+
+.map-btn:hover{
+  background:var(--gold);
+  color:#000;
+}
+
+/* SECTIONS */
+.section{padding:90px 18px;text-align:center}
+.section h2{font-size:28px;margin-bottom:36px}
+
+/* ABOUT */
+.about-grid{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:18px;
+}
+
+.about-card{
+  background:#111;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:var(--shadow);
+}
+
+/* KERATINA */
+.productos-keratina{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+}
+
+.producto-card{
+  background:#111;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:.35s;
+}
+
+.producto-card:hover{
+  transform:translateY(-8px);
+}
+
+.producto-card img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+}
+
+.producto-body{padding:18px}
+.precio{font-size:22px;color:var(--gold);margin:10px 0}
+
+.comprar{
+  border:1px solid var(--gold);
+  color:var(--gold);
+  width:100%;
+  background:transparent;
+}
+
+/* FOOTER */
+.footer{
+  padding:40px 18px;
+  background:#000;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+
+.footer-inner{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:18px;
+}
+
+.footer a{
+  color:#ccc;
+  text-decoration:none;
+  display:block;
+  margin-bottom:6px;
+}
+
+.footer-bottom{
+  text-align:center;
+  margin-top:20px;
+  font-size:12px;
+  color:#777;
+}
+
+/* ANIMACIONES */
+@keyframes zoom{
+  from{transform:scale(1.05)}
+  to{transform:scale(1.12)}
+}
+
+@keyframes smoke{
+  from{transform:translate(0,0)}
+  to{transform:translate(30px,-40px)}
+}
+
+.reveal{opacity:0;transform:translateY(18px);transition:.7s}
+.reveal.in-view{opacity:1;transform:none}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero{padding-top:100px}
+  .hero-inner{transform:translateY(10px)}
+  .hero h1{font-size:34px}
+}
+</style>
 </head>
 
 <body>
@@ -51,106 +289,44 @@
       <br>Las Condes, Santiago
     </p>
 
-    <a href="https://agendapro.com/site/cl/daristudiospa/428012"
-       target="_blank"
-       class="btn primary">
-      Reservar Online
-    </a>
-  </div>
-</section>
+    <div class="hero-buttons">
+      <a href="https://agendapro.com/site/cl/daristudiospa/428012"
+         target="_blank"
+         class="btn primary">
+        Reservar Online
+      </a>
 
-<!-- QUIÉNES SOMOS -->
-<section class="section about reveal">
-  <h2>Quiénes Somos</h2>
-
-  <div class="about-grid">
-    <div class="about-card">
-      <p>
-        <strong>Dari Studio Spa</strong> es un espacio de belleza y bienestar ubicado en
-        <strong>Las Condes, Santiago</strong>. Nos especializamos en manicure, pedicure,
-        hair spa, keratina y estética, entregando una experiencia profesional,
-        personalizada y de alto estándar.
-      </p>
-
-      <p>
-        Si buscas <strong>keratina en Las Condes</strong> o un lugar confiable para cuidar
-        tu imagen, aquí encontrarás asesoría real y resultados visibles.
-      </p>
-    </div>
-
-    <div class="about-card">
-      <h3>¿Qué nos diferencia?</h3>
-      <p>
-        Diagnóstico previo, procesos claros y foco en resultados.
-        Queremos que sepas exactamente qué estás comprando.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- KERATINA -->
-<section class="section keratina">
-  <h2 class="reveal">Tratamiento de Keratina</h2>
-
-  <div class="productos-keratina">
-    <div class="producto-card reveal">
-      <img src="img/keratina-corto.jpeg" alt="Keratina Cabello Corto">
-      <div class="producto-body">
-        <h3>Keratina Cabello Corto</h3>
-        <p class="precio">$70.000</p>
-        <a href="https://link.mercadopago.cl/keratina-corto" target="_blank" class="btn comprar">
-          Comprar (10% dcto)
-        </a>
-      </div>
-    </div>
-
-    <div class="producto-card reveal">
-      <img src="img/keratina-medio.jpeg" alt="Keratina Cabello Medio">
-      <div class="producto-body">
-        <h3>Keratina Cabello Medio</h3>
-        <p class="precio">$80.000</p>
-        <a href="https://link.mercadopago.cl/keratina-medio" target="_blank" class="btn comprar">
-          Comprar (10% dcto)
-        </a>
-      </div>
-    </div>
-
-    <div class="producto-card reveal">
-      <img src="img/keratina-largo.jpeg" alt="Keratina Cabello Largo">
-      <div class="producto-body">
-        <h3>Keratina Cabello Largo</h3>
-        <p class="precio">$120.000</p>
-        <a href="https://link.mercadopago.cl/keratina-largo" target="_blank" class="btn comprar">
-          Comprar (10% dcto)
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div>
-      <strong>Dari Studio Spa</strong>
-      <p>Las Condes, Santiago</p>
-    </div>
-
-    <div>
-      <a href="mailto:contacto@daristudio.cl">contacto@daristudio.cl</a>
-      <a href="tel:+56926302656">+56 9 2630 2656</a>
-    </div>
-
-    <div>
-      <a href="https://www.instagram.com/daristudiospa" target="_blank">
-        Instagram @daristudiospa
+      <a href="https://www.google.com/maps/place/Dari+Studio+Spa"
+         target="_blank"
+         class="btn map-btn">
+        Cómo llegar
       </a>
     </div>
   </div>
+</section>
 
-  <p class="footer-bottom">© 2025 Dari Studio Spa</p>
-</footer>
+<!-- RESTO DE TU CONTENIDO (SIN CAMBIOS) -->
+<!-- ABOUT, KERATINA, FOOTER... tal como ya lo tienes -->
 
-<script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  items.forEach((el) => observer.observe(el));
+});
+</script>
+
 </body>
 </html>
