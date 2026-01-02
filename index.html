@@ -9,324 +9,214 @@
         content="Dari Studio Spa en Las Condes, Santiago. Manicure, Pedicure, Hair Spa, Keratina y Estética. Reserva online o consulta por WhatsApp +56 9 2630 2656." />
 
   <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Dari Studio Spa" />
+  <meta property="og:description" content="Bienestar, estética y cuidado profesional en Las Condes. Reserva tu hora hoy." />
 
   <!-- MONTSERRAT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-
-:root{
-  --gold:#d6b24d;
-  --bg:#000;
-  --text:#fff;
-  --muted:rgba(255,255,255,.75);
-  --shadow:0 20px 60px rgba(0,0,0,.7);
-}
-
-body{
-  font-family:"Montserrat",sans-serif;
-  background:#000;
-  color:#fff;
-}
-
-/* NAVBAR */
-.navbar{
-  position:fixed;
-  top:0;
-  width:100%;
-  height:72px;
-  padding:0 18px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:rgba(0,0,0,.85);
-  backdrop-filter:blur(10px);
-  z-index:1000;
-}
-
-.logo img{
-  height:48px;
-  object-fit:contain;
-}
-
-.nav-right{display:flex;align-items:center;gap:12px}
-.nav-phone{color:#ccc;text-decoration:none;font-size:13px}
-
-.btn{
-  border-radius:999px;
-  padding:12px 26px;
-  font-weight:700;
-  text-decoration:none;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  transition:.3s;
-}
-
-.primary{background:var(--gold);color:#000}
-.whatsapp{background:#25d366;color:#000}
-.small{padding:9px 18px;font-size:13px}
-
-/* HERO */
-.hero{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding-top:120px; /* BAJA CONTENIDO */
-  overflow:hidden;
-}
-
-.hero-bg{
-  position:absolute;
-  inset:0;
-  background:url("img/portada-web-daristudio.JPG") center/cover no-repeat;
-  animation:zoom 18s ease-in-out infinite alternate;
-}
-
-@media(max-width:768px){
-  .hero-bg{
-    background:url("img/dari-studio-portada-movil.jpg") center/cover no-repeat;
-  }
-}
-
-.hero-vignette{
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle,rgba(0,0,0,.3),#000 80%);
-}
-
-.hero-smoke{
-  position:absolute;
-  inset:-20%;
-  background:
-    radial-gradient(circle at 30% 40%,rgba(255,255,255,.06),transparent 40%),
-    radial-gradient(circle at 70% 60%,rgba(255,255,255,.04),transparent 45%);
-  animation:smoke 22s ease-in-out infinite alternate;
-}
-
-.hero-inner{
-  position:relative;
-  z-index:2;
-  transform:translateY(24px); /* BAJA 2–3 CM */
-  max-width:720px;
-  margin:auto;
-}
-
-.hero h1{
-  font-size:46px;
-  font-weight:800;
-  line-height:1.15;
-}
-
-.subtitle{
-  margin:14px 0 32px;
-  color:var(--muted);
-}
-
-.hero-buttons{
-  display:flex;
-  gap:14px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
-.map-btn{
-  border:1px solid var(--gold);
-  color:var(--gold);
-  background:transparent;
-}
-
-.map-btn:hover{
-  background:var(--gold);
-  color:#000;
-}
-
-/* SECTIONS */
-.section{padding:90px 18px;text-align:center}
-.section h2{font-size:28px;margin-bottom:36px}
-
-/* ABOUT */
-.about-grid{
-  max-width:1000px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:18px;
-}
-
-.about-card{
-  background:#111;
-  border-radius:18px;
-  padding:22px;
-  box-shadow:var(--shadow);
-}
-
-/* KERATINA */
-.productos-keratina{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:28px;
-}
-
-.producto-card{
-  background:#111;
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-  transition:.35s;
-}
-
-.producto-card:hover{
-  transform:translateY(-8px);
-}
-
-.producto-card img{
-  width:100%;
-  height:320px;
-  object-fit:cover;
-}
-
-.producto-body{padding:18px}
-.precio{font-size:22px;color:var(--gold);margin:10px 0}
-
-.comprar{
-  border:1px solid var(--gold);
-  color:var(--gold);
-  width:100%;
-  background:transparent;
-}
-
-/* FOOTER */
-.footer{
-  padding:40px 18px;
-  background:#000;
-  border-top:1px solid rgba(255,255,255,.1);
-}
-
-.footer-inner{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:18px;
-}
-
-.footer a{
-  color:#ccc;
-  text-decoration:none;
-  display:block;
-  margin-bottom:6px;
-}
-
-.footer-bottom{
-  text-align:center;
-  margin-top:20px;
-  font-size:12px;
-  color:#777;
-}
-
-/* ANIMACIONES */
-@keyframes zoom{
-  from{transform:scale(1.05)}
-  to{transform:scale(1.12)}
-}
-
-@keyframes smoke{
-  from{transform:translate(0,0)}
-  to{transform:translate(30px,-40px)}
-}
-
-.reveal{opacity:0;transform:translateY(18px);transition:.7s}
-.reveal.in-view{opacity:1;transform:none}
-
-/* MOBILE */
-@media(max-width:768px){
-  .hero{padding-top:100px}
-  .hero-inner{transform:translateY(10px)}
-  .hero h1{font-size:34px}
-}
-</style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<header class="navbar">
-  <a href="#top" class="logo">
-    <img src="img/logo-dari-studio.png" alt="Dari Studio Spa">
-  </a>
-
-  <div class="nav-right">
-    <a class="nav-phone" href="tel:+56926302656">+56 9 2630 2656</a>
-
-    <a href="https://wa.me/56926302656?text=Hola%20Dari%20Studio%20Spa%2C%20quiero%20reservar%20una%20hora."
-       target="_blank"
-       class="btn whatsapp small">
-      WhatsApp
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="#top" class="logo" aria-label="Ir al inicio">
+      <img src="img/logo-dari-studio.png" alt="Dari Studio Spa">
     </a>
-  </div>
-</header>
 
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero-bg"></div>
-  <div class="hero-vignette"></div>
-  <div class="hero-smoke"></div>
-
-  <div class="hero-inner">
-    <h1>Dari Studio Spa</h1>
-
-    <p class="subtitle">
-      Manicure · Pedicure · Hair Spa · Keratina
-      <br>Las Condes, Santiago
-    </p>
-
-    <div class="hero-buttons">
-      <a href="https://agendapro.com/site/cl/daristudiospa/428012"
-         target="_blank"
-         class="btn primary">
-        Reservar Online
+    <div class="nav-right">
+      <a class="nav-phone" href="tel:+56926302656" aria-label="Llamar a Dari Studio Spa">
+        +56 9 2630 2656
       </a>
 
-      <a href="https://www.google.com/maps/place/Dari+Studio+Spa"
+      <a href="https://wa.me/56926302656?text=Hola%20Dari%20Studio%20Spa%2C%20quiero%20consultar%20y%20reservar%20una%20hora."
          target="_blank"
-         class="btn map-btn">
-        Cómo llegar
+         class="btn whatsapp small"
+         aria-label="Abrir WhatsApp">
+        WhatsApp
       </a>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- RESTO DE TU CONTENIDO (SIN CAMBIOS) -->
-<!-- ABOUT, KERATINA, FOOTER... tal como ya lo tienes -->
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <h1>Dari Studio Spa</h1>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll(".reveal");
+      <p class="subtitle">
+        Manicure · Pedicure · Hair Spa · Keratina
+        <br>Las Condes, Santiago
+      </p>
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
+      <div class="hero-buttons">
+        <a href="https://agendapro.com/site/cl/daristudiospa/428012"
+           target="_blank"
+           class="btn primary">
+          Reservar Online
+        </a>
+      </div>
+    </div>
+  </section>
 
-  items.forEach((el) => observer.observe(el));
-});
-</script>
+  <!-- QUIÉNES SOMOS (SEO) -->
+  <section class="section about reveal" id="quienes-somos">
+    <h2>Quiénes Somos</h2>
 
+    <div class="about-grid">
+      <div class="about-card">
+        <p>
+          En <strong>Dari Studio Spa</strong> somos un espacio de <strong>belleza y bienestar</strong> en
+          <strong>Las Condes, Santiago</strong>, enfocado en resultados visibles y una experiencia cómoda,
+          limpia y profesional. Nos especializamos en <strong>manicure</strong>, <strong>pedicure</strong>,
+          <strong>hair spa</strong>, <strong>keratina</strong> y servicios de <strong>estética</strong>,
+          con atención personalizada según tu tipo de cabello, estilo y objetivo.
+        </p>
+
+        <p>
+          Si buscas un lugar confiable para <strong>reservar keratina en Las Condes</strong>, o quieres
+          mejorar el aspecto y salud de tu cabello con asesoría real, estás en el lugar correcto.
+          Puedes <strong>reservar online</strong> o <strong>consultar por WhatsApp</strong> al
+          <strong>+56 9 2630 2656</strong>.
+        </p>
+
+        <ul class="about-list">
+          <li>Atención personalizada y asesoría.</li>
+          <li>Servicios pensados para cuidar y realzar tu imagen.</li>
+          <li>Ubicación conveniente en Las Condes.</li>
+        </ul>
+      </div>
+
+      <div class="about-card">
+        <h3>¿Qué nos diferencia?</h3>
+        <p>
+          Nos enfocamos en el detalle: diagnóstico, recomendaciones y un proceso claro para que sepas qué
+          estás comprando y qué resultado esperar. Nuestro objetivo es que te vayas feliz, segura/o y con
+          ganas de volver.
+        </p>
+
+        <p class="micro">
+          <strong>Tip:</strong> Si tu largo no coincide con la referencia de keratina, recomendamos consultar
+          antes de comprar para asegurar el valor correcto.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KERATINA -->
+  <section class="section keratina" id="keratina">
+    <h2 class="reveal">Tratamiento de Keratina</h2>
+
+    <div class="productos-keratina">
+      <div class="producto-card reveal">
+        <img src="img/keratina-corto.jpeg" alt="Keratina Cabello Corto">
+        <div class="producto-body">
+          <h3>Keratina Cabello Corto</h3>
+          <p class="precio">$70.000</p>
+
+          <a href="https://link.mercadopago.cl/keratina-corto"
+             target="_blank"
+             class="btn comprar">
+            Comprar (10% dcto)
+          </a>
+        </div>
+      </div>
+
+      <div class="producto-card reveal">
+        <img src="img/keratina-medio.jpeg" alt="Keratina Cabello Medio">
+        <div class="producto-body">
+          <h3>Keratina Cabello Medio</h3>
+          <p class="precio">$80.000</p>
+
+          <a href="https://link.mercadopago.cl/keratina-medio"
+             target="_blank"
+             class="btn comprar">
+            Comprar (10% dcto)
+          </a>
+        </div>
+      </div>
+
+      <div class="producto-card reveal">
+        <img src="img/keratina-largo.jpeg" alt="Keratina Cabello Largo">
+        <div class="producto-body">
+          <h3>Keratina Cabello Largo</h3>
+          <p class="precio">$120.000</p>
+
+          <a href="https://link.mercadopago.cl/keratina-largo"
+             target="_blank"
+             class="btn comprar">
+            Comprar (10% dcto)
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <p class="nota reveal">
+      * Si tu largo de cabello no coincide exactamente con la referencia, te recomendamos
+      <a class="inline-link" href="https://wa.me/56926302656?text=Hola%2C%20necesito%20confirmar%20el%20largo%20para%20keratina%20antes%20de%20comprar."
+         target="_blank">consultar por WhatsApp</a>
+      antes de comprar.
+    </p>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section class="section location reveal" id="ubicacion">
+    <h2>Ubicación</h2>
+    <p>
+      📍 Camino El Alba 8770, Local 01<br>
+      Las Condes, Santiago de Chile
+    </p>
+
+    <div class="location-actions">
+      <a class="btn ghost"
+         href="https://www.google.com/maps/search/?api=1&query=Camino+El+Alba+8770+Las+Condes"
+         target="_blank">
+        Ver en Google Maps
+      </a>
+
+      <a class="btn primary"
+         href="https://agendapro.com/site/cl/daristudiospa/428012"
+         target="_blank">
+        Agendar Ahora
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <p class="footer-title">Dari Studio Spa</p>
+        <p class="footer-text">Las Condes, Santiago · Chile</p>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-title">Contacto</p>
+        <a class="footer-link" href="mailto:contacto@daristudio.cl">contacto@daristudio.cl</a>
+        <a class="footer-link" href="tel:+56926302656">+56 9 2630 2656</a>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-title">Redes</p>
+        <a class="footer-link"
+           href="https://www.instagram.com/daristudiospa?igsh=MWJtajI4czEwMnRtcQ=="
+           target="_blank" rel="noopener">
+          Instagram: @daristudiospa
+        </a>
+        <a class="footer-link"
+           href="https://wa.me/56926302656?text=Hola%20Dari%20Studio%20Spa%2C%20quiero%20consultar%20y%20reservar%20una%20hora."
+           target="_blank" rel="noopener">
+          WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <p class="footer-bottom">© 2025 Dari Studio Spa · Todos los derechos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
