@@ -1,4 +1,8 @@
-*{box-sizing:border-box;margin:0;padding:0}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 :root{
   --gold:#d6b24d;
@@ -31,12 +35,22 @@ body{
 
 .logo img{
   height:48px;
-  object-fit:contain;
+  width:auto;
 }
 
-.nav-right{display:flex;align-items:center;gap:12px}
-.nav-phone{color:#ccc;text-decoration:none;font-size:13px}
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
 
+.nav-phone{
+  color:#ccc;
+  text-decoration:none;
+  font-size:13px;
+}
+
+/* BOTONES */
 .btn{
   border-radius:999px;
   padding:12px 26px;
@@ -48,155 +62,77 @@ body{
   transition:.3s;
 }
 
-.primary{background:var(--gold);color:#000}
-.whatsapp{background:#25d366;color:#000}
-.small{padding:9px 18px;font-size:13px}
+.primary{
+  background:var(--gold);
+  color:#000;
+}
 
-/* HERO */
+.whatsapp{
+  background:#25d366;
+  color:#000;
+}
+
+.small{
+  padding:9px 18px;
+  font-size:13px;
+}
+
+/* =========================
+   HERO (PORTADA CORRECTA)
+   ========================= */
+
 .hero{
   position:relative;
   min-height:100vh;
+  padding-top:72px;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding-top:92px;
-  overflow:hidden;
+
+  /* DESKTOP IMAGE */
+  background-image:url("img/portada-web-daristudio.JPG");
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
 }
 
-.hero-bg{
-  position:absolute;
-  inset:0;
-  background:url("img/portada-web-daristudio.JPG") center/cover no-repeat;
-  animation:zoom 18s ease-in-out infinite alternate;
-}
-
-@media(max-width:768px){
-  .hero-bg{
-    background:url("img/dari-studio-portada-movil.jpg") center/cover no-repeat;
+/* CAMBIO AUTOMÁTICO A MÓVIL */
+@media (max-width:768px){
+  .hero{
+    background-image:url("img/dari-studio-portada-movil.jpg");
+    background-position:center top;
   }
 }
 
-.hero-vignette{
+/* VIÑETA / OSCURECIDO */
+.hero-overlay{
   position:absolute;
   inset:0;
-  background:radial-gradient(circle,rgba(0,0,0,.3),#000 80%);
-}
-
-.hero-smoke{
-  position:absolute;
-  inset:-20%;
   background:
-    radial-gradient(circle at 30% 40%,rgba(255,255,255,.06),transparent 40%),
-    radial-gradient(circle at 70% 60%,rgba(255,255,255,.04),transparent 45%);
-  animation:smoke 22s ease-in-out infinite alternate;
+    radial-gradient(circle at center, rgba(0,0,0,.35), rgba(0,0,0,.85) 75%);
 }
 
+/* CONTENIDO */
 .hero-inner{
   position:relative;
   z-index:2;
-  transform:translateY(-24px);
+  transform:translateY(-28px);
 }
 
-.hero h1{font-size:44px;font-weight:800}
-.subtitle{margin:14px 0 28px;color:var(--muted)}
-
-/* SECTIONS */
-.section{padding:90px 18px;text-align:center}
-.section h2{font-size:28px;margin-bottom:36px}
-
-/* ABOUT */
-.about-grid{
-  max-width:1000px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:18px;
+.hero h1{
+  font-size:44px;
+  font-weight:800;
 }
 
-.about-card{
-  background:#111;
-  border-radius:18px;
-  padding:22px;
-  box-shadow:var(--shadow);
+.subtitle{
+  margin:14px 0 28px;
+  color:var(--muted);
 }
 
-/* KERATINA */
-.productos-keratina{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:28px;
+/* RESPONSIVE TEXT */
+@media (max-width:480px){
+  .hero h1{
+    font-size:36px;
+  }
 }
-
-.producto-card{
-  background:#111;
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-  transition:.35s;
-}
-
-.producto-card:hover{
-  transform:translateY(-8px);
-}
-
-.producto-card img{
-  width:100%;
-  height:320px;
-  object-fit:cover;
-}
-
-.producto-body{padding:18px}
-.precio{font-size:22px;color:var(--gold);margin:10px 0}
-
-.comprar{
-  border:1px solid var(--gold);
-  color:var(--gold);
-  width:100%;
-  background:transparent;
-}
-
-/* FOOTER */
-.footer{
-  padding:40px 18px;
-  background:#000;
-  border-top:1px solid rgba(255,255,255,.1);
-}
-
-.footer-inner{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:18px;
-}
-
-.footer a{
-  color:#ccc;
-  text-decoration:none;
-  display:block;
-  margin-bottom:6px;
-}
-
-.footer-bottom{
-  text-align:center;
-  margin-top:20px;
-  font-size:12px;
-  color:#777;
-}
-
-/* ANIMACIONES */
-@keyframes zoom{
-  from{transform:scale(1.05)}
-  to{transform:scale(1.12)}
-}
-
-@keyframes smoke{
-  from{transform:translate(0,0)}
-  to{transform:translate(30px,-40px)}
-}
-
-.reveal{opacity:0;transform:translateY(18px);transition:.7s}
-.reveal.in-view{opacity:1;transform:none}
